@@ -350,6 +350,40 @@
   .dish {
     padding-bottom: 24px;
     border-bottom: 1px dashed var(--line);
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+  .dish-img {
+    width: 96px;
+    height: 96px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--bg-3);
+    border: 1px solid var(--line-2);
+    flex-shrink: 0;
+  }
+  .dish-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .4s ease;
+  }
+  .dish:hover .dish-img img { transform: scale(1.06); }
+  .dish-body { min-width: 0; }
+  .dish-img-placeholder {
+    width: 96px;
+    height: 96px;
+    border-radius: 4px;
+    background: var(--bg-3);
+    border: 1px dashed var(--line-2);
+    flex-shrink: 0;
+  }
+  @media (max-width: 540px) {
+    .dish { grid-template-columns: 72px 1fr; gap: 16px; }
+    .dish-img, .dish-img-placeholder { width: 72px; height: 72px; }
   }
   .dish-top {
     display: flex;
@@ -913,26 +947,16 @@
         <span class="category-name">Beef &amp; Lamb Specials</span>
       </div>
       <div class="menu-grid">
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Uzbek Beef Pilaf (Plov)</div><div class="dish-price">$18 — $22</div></div>
-          <div class="dish-desc">Premium basmati rice, tender beef, yellow carrots, and authentic spices.</div>
-        </div>
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Traditional Meat Manti</div><div class="dish-price">$17 — $21</div></div>
-          <div class="dish-desc">Hand-made steamed meat dumplings served with fresh herbs and sour cream.</div>
-        </div>
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Classic Beef Stroganoff</div><div class="dish-price">$19 — $23</div></div>
-          <div class="dish-desc">Sliced beef in a creamy mushroom sauce served with silky mashed potatoes.</div>
-        </div>
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Homemade Beef Cutlets</div><div class="dish-price">$16 — $20</div></div>
-          <div class="dish-desc">Juicy pan-seared patties with roasted potato wedges and garden greens.</div>
-        </div>
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Stuffed Peppers &amp; Rolls</div><div class="dish-price">$18 — $22</div></div>
-          <div class="dish-desc">Cabbage rolls and bell peppers stuffed with seasoned meat and rice.</div>
-        </div>
+        <div class="dish"><div class="dish-img"><img src="plov.jpg" alt="Uzbek Beef Pilaf (Plov)" loading="lazy"></div><div class="dish-body"><div class="dish-top"><div class="dish-name">Uzbek Beef Pilaf (Plov)</div><div class="dish-price">$18 — $22</div></div>
+          <div class="dish-desc">Premium basmati rice, tender beef, yellow carrots, and authentic spices.</div></div></div>
+        <div class="dish"><div class="dish-img"><img src="manti.jpg" alt="Traditional Meat Manti" loading="lazy"></div><div class="dish-body"><div class="dish-top"><div class="dish-name">Traditional Meat Manti</div><div class="dish-price">$17 — $21</div></div>
+          <div class="dish-desc">Hand-made steamed meat dumplings served with fresh herbs and sour cream.</div></div></div>
+        <div class="dish"><div class="dish-img"><img src="stroganoff.jpg" alt="Classic Beef Stroganoff" loading="lazy"></div><div class="dish-body"><div class="dish-top"><div class="dish-name">Classic Beef Stroganoff</div><div class="dish-price">$19 — $23</div></div>
+          <div class="dish-desc">Sliced beef in a creamy mushroom sauce served with silky mashed potatoes.</div></div></div>
+        <div class="dish"><div class="dish-img"><img src="cutlets.jpg" alt="Homemade Beef Cutlets" loading="lazy"></div><div class="dish-body"><div class="dish-top"><div class="dish-name">Homemade Beef Cutlets</div><div class="dish-price">$16 — $20</div></div>
+          <div class="dish-desc">Juicy pan-seared patties with roasted potato wedges and garden greens.</div></div></div>
+        <div class="dish"><div class="dish-img"><img src="stuffed-peppers.jpg" alt="Stuffed Peppers &amp; Rolls" loading="lazy"></div><div class="dish-body"><div class="dish-top"><div class="dish-name">Stuffed Peppers &amp; Rolls</div><div class="dish-price">$18 — $22</div></div>
+          <div class="dish-desc">Cabbage rolls and bell peppers stuffed with seasoned meat and rice.</div></div></div>
       </div>
     </div>
 
@@ -942,22 +966,14 @@
         <span class="category-name">Poultry &amp; Fish</span>
       </div>
       <div class="menu-grid">
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Grilled Chicken Shish Kebab</div><div class="dish-price">$17 — $20</div></div>
-          <div class="dish-desc">Marinated chicken thighs grilled to perfection, served with herb-infused rice.</div>
-        </div>
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Creamy Mushroom Chicken</div><div class="dish-price">$18 — $21</div></div>
-          <div class="dish-desc">Tender chicken breast in a savory cream sauce with roasted vegetables.</div>
-        </div>
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Lemon Herb Baked Salmon</div><div class="dish-price">$22 — $26</div></div>
-          <div class="dish-desc">Fresh salmon fillet with a citrus glaze, served with grilled asparagus.</div>
-        </div>
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">White Fish Papillote</div><div class="dish-price">$20 — $24</div></div>
-          <div class="dish-desc">Delicate steamed white fish with seasonal garden vegetables and lemon.</div>
-        </div>
+        <div class="dish"><div class="dish-img"><img src="chicken-kebab.jpg" alt="Grilled Chicken Shish Kebab" loading="lazy"></div><div class="dish-body"><div class="dish-top"><div class="dish-name">Grilled Chicken Shish Kebab</div><div class="dish-price">$17 — $20</div></div>
+          <div class="dish-desc">Marinated chicken thighs grilled to perfection, served with herb-infused rice.</div></div></div>
+        <div class="dish"><div class="dish-img"><img src="mushroom-chicken.jpg" alt="Creamy Mushroom Chicken" loading="lazy"></div><div class="dish-body"><div class="dish-top"><div class="dish-name">Creamy Mushroom Chicken</div><div class="dish-price">$18 — $21</div></div>
+          <div class="dish-desc">Tender chicken breast in a savory cream sauce with roasted vegetables.</div></div></div>
+        <div class="dish"><div class="dish-img"><img src="salmon.jpg" alt="Lemon Herb Baked Salmon" loading="lazy"></div><div class="dish-body"><div class="dish-top"><div class="dish-name">Lemon Herb Baked Salmon</div><div class="dish-price">$22 — $26</div></div>
+          <div class="dish-desc">Fresh salmon fillet with a citrus glaze, served with grilled asparagus.</div></div></div>
+        <div class="dish"><div class="dish-img"><img src="white-fish.jpg" alt="White Fish Papillote" loading="lazy"></div><div class="dish-body"><div class="dish-top"><div class="dish-name">White Fish Papillote</div><div class="dish-price">$20 — $24</div></div>
+          <div class="dish-desc">Delicate steamed white fish with seasonal garden vegetables and lemon.</div></div></div>
       </div>
     </div>
 
@@ -967,22 +983,14 @@
         <span class="category-name">Event Trays · For Large Crews</span>
       </div>
       <div class="menu-grid">
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Bulk Hot Meat Entrées</div><div class="dish-price">$85+</div></div>
-          <div class="dish-desc">Family-style trays of Pilaf or Roasted Meat for large production crews.</div>
-        </div>
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Party Lavash Meat Wraps</div><div class="dish-price">$55+</div></div>
-          <div class="dish-desc">Assorted savory wraps with protein and fresh greens · Serves 10–12.</div>
-        </div>
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Roasted Veggie Party Tray</div><div class="dish-price">$65+</div></div>
-          <div class="dish-desc">Zucchini, asparagus, bell peppers, and cauliflower. Perfect for sharing.</div>
-        </div>
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Cold Kuksu Noodle Box</div><div class="dish-price">$15 — $18</div></div>
-          <div class="dish-desc">Wheat noodles, fresh radish, cucumbers, and cilantro in a chilled broth.</div>
-        </div>
+        <div class="dish"><div class="dish-img-placeholder" aria-hidden="true"></div><div class="dish-body"><div class="dish-top"><div class="dish-name">Bulk Hot Meat Entrées</div><div class="dish-price">$85+</div></div>
+          <div class="dish-desc">Family-style trays of Pilaf or Roasted Meat for large production crews.</div></div></div>
+        <div class="dish"><div class="dish-img-placeholder" aria-hidden="true"></div><div class="dish-body"><div class="dish-top"><div class="dish-name">Party Lavash Meat Wraps</div><div class="dish-price">$55+</div></div>
+          <div class="dish-desc">Assorted savory wraps with protein and fresh greens · Serves 10–12.</div></div></div>
+        <div class="dish"><div class="dish-img-placeholder" aria-hidden="true"></div><div class="dish-body"><div class="dish-top"><div class="dish-name">Roasted Veggie Party Tray</div><div class="dish-price">$65+</div></div>
+          <div class="dish-desc">Zucchini, asparagus, bell peppers, and cauliflower. Perfect for sharing.</div></div></div>
+        <div class="dish"><div class="dish-img-placeholder" aria-hidden="true"></div><div class="dish-body"><div class="dish-top"><div class="dish-name">Cold Kuksu Noodle Box</div><div class="dish-price">$15 — $18</div></div>
+          <div class="dish-desc">Wheat noodles, fresh radish, cucumbers, and cilantro in a chilled broth.</div></div></div>
       </div>
     </div>
   </div>
