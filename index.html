@@ -511,8 +511,37 @@
   .salads-col li {
     padding: 14px 0;
     border-bottom: 1px dashed var(--line);
+    display: flex;
+    align-items: center;
+    gap: 14px;
   }
   .salads-col li:last-child { border-bottom: none; }
+  .salad-thumb {
+    width: 52px;
+    height: 52px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--bg-3);
+    border: 1px solid var(--line-2);
+    flex-shrink: 0;
+  }
+  .salad-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .4s ease;
+  }
+  .salads-col li:hover .salad-thumb img { transform: scale(1.08); }
+  .salad-thumb-placeholder {
+    width: 52px;
+    height: 52px;
+    border-radius: 4px;
+    background: var(--bg-3);
+    border: 1px dashed var(--line-2);
+    flex-shrink: 0;
+  }
+  .salad-info { min-width: 0; flex: 1; }
   .salad-name {
     font-family: 'Fraunces', serif;
     font-size: 17px;
@@ -1108,32 +1137,128 @@
       <div class="salads-col reveal">
         <h3>Everyday Favorites</h3>
         <ul>
-          <li><div class="salad-name">Carrot Salad</div><div class="salad-desc">Korean-style spiced carrot</div></li>
-          <li><div class="salad-name">Beet Salad</div><div class="salad-desc">Beet with garlic &amp; spice</div></li>
-          <li><div class="salad-name">Cucumber Salad</div><div class="salad-desc">Cucumber, onion, red pepper</div></li>
-          <li><div class="salad-name">Kimchi</div><div class="salad-desc">Traditional napa cabbage</div></li>
-          <li><div class="salad-name">Daikon Radish Salad</div><div class="salad-desc">Japanese white radish</div></li>
+          <li>
+            <div class="salad-thumb"><img src="salad-carrot.jpg" alt="Carrot Salad" loading="lazy"></div>
+            <div class="salad-info">
+              <div class="salad-name">Carrot Salad</div>
+              <div class="salad-desc">Korean-style spiced carrot</div>
+            </div>
+          </li>
+          <li>
+            <div class="salad-thumb"><img src="salad-beet.jpg" alt="Beet Salad" loading="lazy"></div>
+            <div class="salad-info">
+              <div class="salad-name">Beet Salad</div>
+              <div class="salad-desc">Beet with garlic &amp; spice</div>
+            </div>
+          </li>
+          <li>
+            <div class="salad-thumb"><img src="salad-cucumber.jpg" alt="Cucumber Salad" loading="lazy"></div>
+            <div class="salad-info">
+              <div class="salad-name">Cucumber Salad</div>
+              <div class="salad-desc">Cucumber, onion, red pepper</div>
+            </div>
+          </li>
+          <li>
+            <div class="salad-thumb"><img src="salad-kimchi.jpg" alt="Kimchi" loading="lazy"></div>
+            <div class="salad-info">
+              <div class="salad-name">Kimchi</div>
+              <div class="salad-desc">Traditional napa cabbage</div>
+            </div>
+          </li>
+          <li>
+            <div class="salad-thumb"><img src="salad-daikon.jpg" alt="Daikon Radish Salad" loading="lazy"></div>
+            <div class="salad-info">
+              <div class="salad-name">Daikon Radish Salad</div>
+              <div class="salad-desc">Japanese white radish</div>
+            </div>
+          </li>
         </ul>
       </div>
       <div class="salads-col reveal">
         <h3>Signature Salads</h3>
         <ul>
-          <li><div class="salad-name">Cabbage Salad</div><div class="salad-desc">Cabbage, carrot, bell peppers</div></li>
-          <li><div class="salad-name">Zucchini Salad</div><div class="salad-desc">Zucchini with vegetables</div></li>
-          <li><div class="salad-name">Funchoza</div><div class="salad-desc">Glass noodle salad</div></li>
-          <li><div class="salad-name">Eggplant &amp; Walnuts</div><div class="salad-desc">Rich &amp; savory</div></li>
-          <li><div class="salad-name">Eggplant &amp; Vegetables</div><div class="salad-desc">Colorful mix</div></li>
+          <li>
+            <div class="salad-thumb-placeholder" aria-hidden="true"></div>
+            <div class="salad-info">
+              <div class="salad-name">Cabbage Salad</div>
+              <div class="salad-desc">Cabbage, carrot, bell peppers</div>
+            </div>
+          </li>
+          <li>
+            <div class="salad-thumb-placeholder" aria-hidden="true"></div>
+            <div class="salad-info">
+              <div class="salad-name">Zucchini Salad</div>
+              <div class="salad-desc">Zucchini with vegetables</div>
+            </div>
+          </li>
+          <li>
+            <div class="salad-thumb-placeholder" aria-hidden="true"></div>
+            <div class="salad-info">
+              <div class="salad-name">Funchoza</div>
+              <div class="salad-desc">Glass noodle salad</div>
+            </div>
+          </li>
+          <li>
+            <div class="salad-thumb-placeholder" aria-hidden="true"></div>
+            <div class="salad-info">
+              <div class="salad-name">Eggplant &amp; Walnuts</div>
+              <div class="salad-desc">Rich &amp; savory</div>
+            </div>
+          </li>
+          <li>
+            <div class="salad-thumb-placeholder" aria-hidden="true"></div>
+            <div class="salad-info">
+              <div class="salad-name">Eggplant &amp; Vegetables</div>
+              <div class="salad-desc">Colorful mix</div>
+            </div>
+          </li>
         </ul>
       </div>
       <div class="salads-col reveal">
         <h3>Premium Selection</h3>
         <ul>
-          <li><div class="salad-name">Sparja</div><div class="salad-desc">Soy bean stick salad</div></li>
-          <li><div class="salad-name">Corall</div><div class="salad-desc">White fungus &amp; peppers</div></li>
-          <li><div class="salad-name">Mushroom &amp; Vegetables</div><div class="salad-desc">Shiitake blend</div></li>
-          <li><div class="salad-name">Mushroom Salad</div><div class="salad-desc">Classic mushroom</div></li>
-          <li><div class="salad-name">Small Pepper Salad</div><div class="salad-desc">Colorful peppers</div></li>
-          <li><div class="salad-name">Cauliflower Salad</div><div class="salad-desc">Cauliflower &amp; peppers</div></li>
+          <li>
+            <div class="salad-thumb-placeholder" aria-hidden="true"></div>
+            <div class="salad-info">
+              <div class="salad-name">Sparja</div>
+              <div class="salad-desc">Soy bean stick salad</div>
+            </div>
+          </li>
+          <li>
+            <div class="salad-thumb-placeholder" aria-hidden="true"></div>
+            <div class="salad-info">
+              <div class="salad-name">Corall</div>
+              <div class="salad-desc">White fungus &amp; peppers</div>
+            </div>
+          </li>
+          <li>
+            <div class="salad-thumb-placeholder" aria-hidden="true"></div>
+            <div class="salad-info">
+              <div class="salad-name">Mushroom &amp; Vegetables</div>
+              <div class="salad-desc">Shiitake blend</div>
+            </div>
+          </li>
+          <li>
+            <div class="salad-thumb-placeholder" aria-hidden="true"></div>
+            <div class="salad-info">
+              <div class="salad-name">Mushroom Salad</div>
+              <div class="salad-desc">Classic mushroom</div>
+            </div>
+          </li>
+          <li>
+            <div class="salad-thumb-placeholder" aria-hidden="true"></div>
+            <div class="salad-info">
+              <div class="salad-name">Small Pepper Salad</div>
+              <div class="salad-desc">Colorful peppers</div>
+            </div>
+          </li>
+          <li>
+            <div class="salad-thumb-placeholder" aria-hidden="true"></div>
+            <div class="salad-info">
+              <div class="salad-name">Cauliflower Salad</div>
+              <div class="salad-desc">Cauliflower &amp; peppers</div>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
