@@ -385,6 +385,72 @@
     .dish { grid-template-columns: 72px 1fr; gap: 16px; }
     .dish-img, .dish-img-placeholder { width: 72px; height: 72px; }
   }
+
+  /* Event Tray cards — large landscape format for B2B abundance shots */
+  .tray-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  @media (max-width: 768px) { .tray-grid { grid-template-columns: 1fr; gap: 24px; } }
+
+  .tray-card {
+    border: 1px solid var(--line-2);
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--bg-2);
+    transition: border-color .3s, transform .3s;
+  }
+  .tray-card:hover {
+    border-color: var(--green-deep);
+    transform: translateY(-4px);
+  }
+  .tray-img {
+    aspect-ratio: 16 / 11;
+    overflow: hidden;
+    background: var(--bg-3);
+    border-bottom: 1px solid var(--line);
+  }
+  .tray-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s ease;
+  }
+  .tray-card:hover .tray-img img { transform: scale(1.04); }
+  .tray-body { padding: 28px 28px 32px; }
+  .tray-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+  .tray-name {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .tray-price {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: var(--green);
+    font-weight: 500;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+  }
+  .tray-desc {
+    font-size: 14px;
+    color: var(--ink-dim);
+    line-height: 1.6;
+  }
+  @media (max-width: 540px) {
+    .tray-body { padding: 22px 22px 26px; }
+    .tray-name { font-size: 19px; }
+  }
   .dish-top {
     display: flex;
     justify-content: space-between;
@@ -982,15 +1048,47 @@
         <span class="category-num">[ 03 ]</span>
         <span class="category-name">Event Trays · For Large Crews</span>
       </div>
-      <div class="menu-grid">
-        <div class="dish"><div class="dish-img-placeholder" aria-hidden="true"></div><div class="dish-body"><div class="dish-top"><div class="dish-name">Bulk Hot Meat Entrées</div><div class="dish-price">$85+</div></div>
-          <div class="dish-desc">Family-style trays of Pilaf or Roasted Meat for large production crews.</div></div></div>
-        <div class="dish"><div class="dish-img-placeholder" aria-hidden="true"></div><div class="dish-body"><div class="dish-top"><div class="dish-name">Party Lavash Meat Wraps</div><div class="dish-price">$55+</div></div>
-          <div class="dish-desc">Assorted savory wraps with protein and fresh greens · Serves 10–12.</div></div></div>
-        <div class="dish"><div class="dish-img-placeholder" aria-hidden="true"></div><div class="dish-body"><div class="dish-top"><div class="dish-name">Roasted Veggie Party Tray</div><div class="dish-price">$65+</div></div>
-          <div class="dish-desc">Zucchini, asparagus, bell peppers, and cauliflower. Perfect for sharing.</div></div></div>
-        <div class="dish"><div class="dish-img-placeholder" aria-hidden="true"></div><div class="dish-body"><div class="dish-top"><div class="dish-name">Cold Kuksu Noodle Box</div><div class="dish-price">$15 — $18</div></div>
-          <div class="dish-desc">Wheat noodles, fresh radish, cucumbers, and cilantro in a chilled broth.</div></div></div>
+      <div class="tray-grid">
+        <div class="tray-card">
+          <div class="tray-img"><img src="pilaf-meat.jpg" alt="Bulk Hot Meat Entrées — Pilaf and Roasted Meat" loading="lazy"></div>
+          <div class="tray-body">
+            <div class="tray-top">
+              <div class="tray-name">Bulk Hot Meat Entrées</div>
+              <div class="tray-price">$85+</div>
+            </div>
+            <div class="tray-desc">Family-style trays of Pilaf or Roasted Meat for large production crews.</div>
+          </div>
+        </div>
+        <div class="tray-card">
+          <div class="tray-img"><img src="lavash-wraps.jpg" alt="Party Lavash Meat Wraps" loading="lazy"></div>
+          <div class="tray-body">
+            <div class="tray-top">
+              <div class="tray-name">Party Lavash Meat Wraps</div>
+              <div class="tray-price">$55+</div>
+            </div>
+            <div class="tray-desc">Assorted savory wraps with protein and fresh greens · Serves 10–12.</div>
+          </div>
+        </div>
+        <div class="tray-card">
+          <div class="tray-img"><img src="veggies-tray.jpg" alt="Roasted Veggie Party Tray" loading="lazy"></div>
+          <div class="tray-body">
+            <div class="tray-top">
+              <div class="tray-name">Roasted Veggie Party Tray</div>
+              <div class="tray-price">$65+</div>
+            </div>
+            <div class="tray-desc">Zucchini, asparagus, bell peppers, and cauliflower. Perfect for sharing.</div>
+          </div>
+        </div>
+        <div class="tray-card">
+          <div class="tray-img"><img src="cold-kuksu.jpg" alt="Cold Kuksu Noodle Box" loading="lazy"></div>
+          <div class="tray-body">
+            <div class="tray-top">
+              <div class="tray-name">Cold Kuksu Noodle Box</div>
+              <div class="tray-price">$15 — $18</div>
+            </div>
+            <div class="tray-desc">Wheat noodles, fresh radish, cucumbers, and cilantro in a chilled broth.</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
